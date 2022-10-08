@@ -1,6 +1,35 @@
-﻿//Задача 10: Напишите программу, которая принимает на вход 
-//трёхзначное число и на выходе показывает вторую цифру этого числа.
+﻿
+//Задача 13: Напишите программу, которая выводит третью цифру заданного числа или сообщает, 
+//что третьей цифры нет.
 
-int num = new Random().Next(100, 999);
-int num2 = num % 100 / 10;
-Console.WriteLine($"В числе {num} вторая цифра {num2}");
+Console.WriteLine("Введите число от 1 до 100000: ");
+int Number = int.Parse(Console.ReadLine()!);
+if ((Number<1)||(Number>100000))
+{
+    Console.WriteLine("Введите число согласно условию");
+}
+else if (Number <= 100)
+    {
+        if (Number < 100)
+        {
+            Console.WriteLine($"В числе {Number} меньше трех цифр");
+        }
+        else
+        {
+            Console.WriteLine($"Третья цифра числа {Number} - '0'");
+        }
+    }
+    else
+    {
+        int Number2 = Number;
+        while (Number2 > 1000)       //12345
+        {
+            Number2 = Number2 / 10;
+            //Console.WriteLine(Number2);
+        }
+        Number2 = (Number2 - 100) % 10;
+        Console.WriteLine($"Третья цифра числа {Number} - '{Number2}' ");
+    }
+
+
+
